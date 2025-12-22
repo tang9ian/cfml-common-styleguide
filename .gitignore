@@ -1,0 +1,51 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# CFLint generated files
+cflint-*.html
+cflint-*.txt
+cflint-*.xml
+
+# Reports directory
+examples/reports/
+reports/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Node modules (if using npm tools)
+node_modules/
+
+# Build artifacts
+dist/
+build/
+target/
+
+# ColdFusion specific
+WEB-INF/cfclasses/
+WEB-INF/cfform/
+cfcache/
+*.class
+
+# Database files
+*.mdb
+*.accdb
+
+# Backup files
+*.bak
+*.backup
