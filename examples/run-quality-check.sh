@@ -7,11 +7,11 @@ echo "=== CFML Code Quality Check ==="
 echo "Running CFLint analysis..."
 
 # Check if CFLint jar exists
-CFLINT_JAR="CFLint-all-1.5.0.jar"
+CFLINT_JAR="CFLint-1.5.0-all.jar"
 
 if [ ! -f "$CFLINT_JAR" ]; then
     echo "Downloading CFLint..."
-    wget -q https://github.com/cflint/CFLint/releases/latest/download/CFLint-all-1.5.0.jar
+    wget -q https://github.com/cflint/CFLint/releases/download/CFLint-1.5.0/$CFLINT_JAR
 fi
 
 # Create reports directory

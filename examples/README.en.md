@@ -1,5 +1,4 @@
-* [English](README.en.md)
-* [中文](README.md)  
+* [English](README.en.md) | [中文](README.md)  
 
 # Code Quality Detection Examples
 
@@ -21,7 +20,7 @@ examples/
 ### 1. Install CFLint
 ```bash
 # Download CFLint
-wget https://github.com/cflint/CFLint/releases/latest/download/CFLint-all-1.5.0.jar
+wget https://github.com/cflint/CFLint/releases/download/CFLint-1.5.0/CFLint-1.5.0-all.jar
 
 # Or use CommandBox
 box install cflint
@@ -30,13 +29,13 @@ box install cflint
 ### 2. Run Detection
 ```bash
 # Check single file
-java -jar CFLint-all-1.5.0.jar -file examples/bad/BadExample.cfc
+java -jar CFLint-1.5.0-all.jar -file examples/bad/BadExample.cfc
 
 # Check entire directory
-java -jar CFLint-all-1.5.0.jar -folder examples/
+java -jar CFLint-1.5.0-all.jar -folder examples/
 
 # Generate HTML report
-java -jar CFLint-all-1.5.0.jar -folder examples/ -html cflint-report.html
+java -jar CFLint-1.5.0-all.jar -folder examples/ -html cflint-report.html
 ```
 
 ### 3. View Results

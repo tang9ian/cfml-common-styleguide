@@ -1,3 +1,5 @@
+* [English](README.en.md) | [中文](README.md)  
+
 # 代码质量检测示例
 
 本目录包含CFML代码质量检测的示例，使用CFLint工具进行静态代码分析。
@@ -18,7 +20,7 @@ examples/
 ### 1. 安装CFLint
 ```bash
 # 下载CFLint
-wget https://github.com/cflint/CFLint/releases/latest/download/CFLint-all-1.5.0.jar
+wget https://github.com/cflint/CFLint/releases/download/CFLint-1.5.0/CFLint-1.5.0-all.jar
 
 # 或使用CommandBox
 box install cflint
@@ -27,13 +29,13 @@ box install cflint
 ### 2. 运行检测
 ```bash
 # 检测单个文件
-java -jar CFLint-all-1.5.0.jar -file examples/bad/BadExample.cfc
+java -jar CFLint-1.5.0-all.jar -file examples/bad/BadExample.cfc
 
 # 检测整个目录
-java -jar CFLint-all-1.5.0.jar -folder examples/
+java -jar CFLint-1.5.0-all.jar -folder examples/
 
 # 生成HTML报告
-java -jar CFLint-all-1.5.0.jar -folder examples/ -html cflint-report.html
+java -jar CFLint-1.5.0-all.jar -folder examples/ -html cflint-report.html
 ```
 
 ### 3. 查看结果

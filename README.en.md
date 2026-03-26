@@ -1,5 +1,4 @@
-* [English](README.en.md)
-* [中文](README.md)  
+* [English](README.en.md) | [中文](README.md)  
 
 # CFML/ColdFusion Coding Standards
 
@@ -18,11 +17,11 @@ A coding standards guide to keep code clean, tidy, and with clear, understandabl
 - Use camelCase
 - Variable names should be descriptive, avoid abbreviations
 ```cfml
-// Recommended
+<!--- // Recommended --->
 <cfset userName = "john_doe">
 <cfset totalAmount = 1500>
 
-// Not recommended
+<!--- // Not recommended --->
 <cfset un = "john_doe">
 <cfset amt = 1500>
 ```
@@ -31,11 +30,11 @@ A coding standards guide to keep code clean, tidy, and with clear, understandabl
 - Use camelCase
 - Function names should clearly express their purpose
 ```cfml
-// Recommended
+<!--- // Recommended --->
 <cffunction name="getUserById" returntype="struct">
 <cffunction name="calculateTotalPrice" returntype="numeric">
 
-// Not recommended
+<!--- // Not recommended --->
 <cffunction name="getUser" returntype="struct">
 <cffunction name="calc" returntype="numeric">
 ```
@@ -58,17 +57,17 @@ component name="UserService" {
 
 ### Tag Formatting
 ```cfml
-// Recommended - Simple tags on single line
+<!--- // Recommended - Simple tags on single line --->
 <cfset userName = "john">
 
-// Recommended - Complex tags on multiple lines
+<!--- // Recommended - Complex tags on multiple lines --->
 <cfquery name="getUsers" datasource="myDB">
     SELECT id, name, email
     FROM users
     WHERE active = 1
 </cfquery>
 
-// Recommended - Nested tags with proper indentation
+<!--- // Recommended - Nested tags with proper indentation --->
 <cfif isDefined("form.submit")>
     <cfloop query="users">
         <cfoutput>#users.name#</cfoutput>
@@ -108,13 +107,13 @@ function getUserData(userId) {
  */
 <cffunction name="getUserById" returntype="struct">
     <cfargument name="userId" type="numeric" required="true">
-    // Function implementation
+    <!--- // Function implementation --->
 </cffunction>
 ```
 
 ### Inline Comments
 ```cfml
-// Validate user input
+<!--- // Validate user input --->
 <cfif len(trim(form.email)) eq 0>
     <cfset errors.email = "Email cannot be empty">
 </cfif>
@@ -130,25 +129,25 @@ function getUserData(userId) {
 
 ### Variable Scope
 ```cfml
-// Recommended - Explicitly specify scope
+<!--- // Recommended - Explicitly specify scope --->
 <cfset variables.userName = form.userName>
 <cfset session.isLoggedIn = true>
 <cfset request.pageTitle = "User Management">
 
-// Not recommended - Unspecified scope
+<!--- // Not recommended - Unspecified scope --->
 <cfset userName = form.userName>
 ```
 
 ### Query Optimization
 ```cfml
-// Recommended - Use cfqueryparam to prevent SQL injection
+<!--- // Recommended - Use cfqueryparam to prevent SQL injection --->
 <cfquery name="getUser" datasource="myDB">
     SELECT id, name, email
     FROM users
     WHERE id = <cfqueryparam value="#arguments.userId#" cfsqltype="cf_sql_integer">
 </cfquery>
 
-// Recommended - Limit query results
+<!--- // Recommended - Limit query results --->
 <cfquery name="getRecentUsers" datasource="myDB" maxrows="100">
     SELECT TOP 100 id, name, created_date
     FROM users
@@ -158,7 +157,7 @@ function getUserData(userId) {
 
 ### Error Handling
 ```cfml
-// Recommended - Use try/catch for exception handling
+<!--- // Recommended - Use try/catch for exception handling --->
 <cftry>
     <cfset result = someComplexOperation()>
     <cfcatch type="any">

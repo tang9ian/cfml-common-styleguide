@@ -1,5 +1,4 @@
-* [English](README.en.md)
-* [中文](README.md)
+* [English](README.en.md) | [中文](README.md)
 
 # CFML/ColdFusion 编码规范
 
@@ -18,11 +17,11 @@
 - 使用驼峰命名法（camelCase）
 - 变量名应具有描述性，避免缩写
 ```cfml
-// 推荐
+<!--- // 推荐. --->
 <cfset userName = "john_doe">
 <cfset totalAmount = 1500>
 
-// 不推荐
+<!--- // 不推荐  --->
 <cfset un = "john_doe">
 <cfset amt = 1500>
 ```
@@ -31,11 +30,11 @@
 - 使用驼峰命名法
 - 函数名应清楚表达其功能
 ```cfml
-// 推荐
+<!--- // 推荐  --->
 <cffunction name="getUserById" returntype="struct">
 <cffunction name="calculateTotalPrice" returntype="numeric">
 
-// 不推荐
+<!--- // 不推荐  --->
 <cffunction name="getUser" returntype="struct">
 <cffunction name="calc" returntype="numeric">
 ```
@@ -58,17 +57,17 @@ component name="UserService" {
 
 ### 标签格式
 ```cfml
-// 推荐 - 简单标签单行
+<!--- // 推荐 - 简单标签单行   --->
 <cfset userName = "john">
 
-// 推荐 - 复杂标签多行
+<!--- // 推荐 - 复杂标签多行  --->
 <cfquery name="getUsers" datasource="myDB">
     SELECT id, name, email
     FROM users
     WHERE active = 1
 </cfquery>
 
-// 推荐 - 嵌套标签适当缩进
+<!--- // 推荐 - 嵌套标签适当缩进  --->
 <cfif isDefined("form.submit")>
     <cfloop query="users">
         <cfoutput>#users.name#</cfoutput>
@@ -108,13 +107,13 @@ function getUserData(userId) {
  */
 <cffunction name="getUserById" returntype="struct">
     <cfargument name="userId" type="numeric" required="true">
-    // 函数实现
+    <!--- // 函数实现 --->
 </cffunction>
 ```
 
 ### 行内注释
 ```cfml
-// 验证用户输入
+<!--- // 验证用户输入. --->
 <cfif len(trim(form.email)) eq 0>
     <cfset errors.email = "邮箱不能为空">
 </cfif>
@@ -130,25 +129,25 @@ function getUserData(userId) {
 
 ### 变量作用域
 ```cfml
-// 推荐 - 明确指定作用域
+<!--- // 推荐 - 明确指定作用域 --->
 <cfset variables.userName = form.userName>
 <cfset session.isLoggedIn = true>
 <cfset request.pageTitle = "用户管理">
 
-// 不推荐 - 未指定作用域
+<!--- // 不推荐 - 未指定作用域 --->
 <cfset userName = form.userName>
 ```
 
 ### 查询优化
 ```cfml
-// 推荐 - 使用cfqueryparam防止SQL注入
+<!--- // 推荐 - 使用cfqueryparam防止SQL注入 --->
 <cfquery name="getUser" datasource="myDB">
     SELECT id, name, email
     FROM users
     WHERE id = <cfqueryparam value="#arguments.userId#" cfsqltype="cf_sql_integer">
 </cfquery>
 
-// 推荐 - 限制查询结果
+<!--- // 推荐 - 限制查询结果 --->
 <cfquery name="getRecentUsers" datasource="myDB" maxrows="100">
     SELECT TOP 100 id, name, created_date
     FROM users
@@ -158,7 +157,7 @@ function getUserData(userId) {
 
 ### 错误处理
 ```cfml
-// 推荐 - 使用try/catch处理异常
+<!--- // 推荐 - 使用try/catch处理异常 --->
 <cftry>
     <cfset result = someComplexOperation()>
     <cfcatch type="any">
